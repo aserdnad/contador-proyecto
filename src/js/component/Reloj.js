@@ -10,6 +10,7 @@ const Reloj = () => {
 	const [cuentaAbajo, setCuentaAbajo] = useState(false);
 	const [mostrarForm, setMostrarForm] = useState(false);
 	const [alarma, setAlarma] = useState(null);
+	const [preAlarma, setPreAlarma] = useState(null);
 	const [mostrarAlarma, setMostrarAlarma] = useState(false);
 	const [unaAlarma, setUnaAlarma] = useState(false);
 	const [seVeArriba, setSeVeArriba] = useState(true);
@@ -151,10 +152,11 @@ const Reloj = () => {
 					<input
 						type="text"
 						required
-						onChange={e => setAlarma(e.target.value)}
+						onChange={e => setPreAlarma(e.target.value)}
 					/>
 					<button
 						onClick={() => {
+							setAlarma(preAlarma);
 							setMostrarAlarma(false);
 							setUnaAlarma(false);
 						}}>
